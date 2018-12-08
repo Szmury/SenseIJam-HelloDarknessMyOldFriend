@@ -9,7 +9,7 @@ public class LightCollider : MonoBehaviour {
         if (other.tag == "Gremlin")
         {
             Debug.Log("Gremlin in light range!");
-            // TODO: Burn gremlin here
+            other.gameObject.GetComponent<GremlinController>().Burn();
         }
     }
 }
