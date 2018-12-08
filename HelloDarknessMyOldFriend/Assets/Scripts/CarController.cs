@@ -5,65 +5,73 @@ public class CarController : MonoBehaviour
 {
 
     public List<Vector3> vectors;
+    public List<float> speed;
+    public float defaultSpeed = 5;
     public bool loop = true;
 
-    public float speed=5f;
+    bool stop = false;
+    int index = -1;
+    float currentSpeed;
+    Vector3 currentVector;
+    Vector3 endPoint;
 
-    // Time when the movement started.
-    private float startTime;
-
-    // Total distance between the markers.
-    private float journeyLength;
-
-    private Vector3 currentTarget;
-    private int currentIndex;
+    Quaternion startRotation;
 
     public void Start()
     {
-        if (vectors.Count != 0)
+        if (vectors.Count == 0)
         {
-            currentIndex = 0;
-            currentTarget = vectors[0];
-            // Keep a note of the time the movement started.
-            startTime = Time.time;
-
-            // Calculate the journey length.
-            journeyLength = Vector3.Distance(transform.position, currentTarget);
+            Debug.Log("NIE MA WEKTOR�W DLA CARCONTROLLER!!!");
         }
+        NewDestination();
+        startRotation = transform.rotation;
     }
 
     private void Update()
     {
-        if (vectors.Count != 0)
+        if (!stop)
         {
-            if ((transform.position - currentTarget).magnitude >= 0.1f)
-            {
-                GoToTarget();
-                RotateToTarget();
-            }
-            else
-            {
-                if(currentIndex < vectors.Count -1)
-                {
-                    currentIndex++;
-                    currentTarget = vectors[currentIndex];
-                }
-            }
+            transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
+            Debug.Log(Vector3.forward);
+
+            if ((transform.position - endPoint).magnitude <= 0.3)
+                NewDestination();
         }
     }
 
-    void GoToTarget()
+    void NewDestination()
     {
-        // Distance moved = time * speed.
-        float distCovered = (Time.time - startTime) * speed;
+        index++;
+        if (index == vectors.Count)
+        {
+            if (loop)
+                index = 0;
+            else
+            {
+                stop = true;
+                Debug.Log("Koniec podr�y");
+                return;
+            }
+        }
 
-        // Fraction of journey completed = current distance divided by total distance.
-        float fracJourney = distCovered / journeyLength;
-        transform.position = Vector3.Lerp(transform.position, currentTarget, fracJourney);
-    }
+        if (speed.Count <= index)
+        {
+            currentSpeed = defaultSpeed;
+        }
+        else
+        {
+            currentSpeed = speed[index];
+            if (currentSpeed == 0)
+                currentSpeed = defaultSpeed;
+        }
 
-    void RotateToTarget()
-    {
-        transform.rotation = Quaternion.LookRotation(currentTarget - transform.position, Vector3.up);
+        currentVector = vectors[index];
+        endPoint = transform.position + currentVector;
+        currentVector = currentVector.normalized;
+
+        //Quaternion rotation = Quaternion.identity;
+
+        transform.rotation = Quaternion.LookRotation(currentVector, Vector3.up);
+        Debug.Log(currentVector.normalized);
     }
 }
