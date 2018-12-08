@@ -15,8 +15,6 @@ public class CarController : MonoBehaviour
     Vector3 currentVector;
     Vector3 endPoint;
 
-    Quaternion startRotation;
-
     public void Start()
     {
         if (vectors.Count == 0)
@@ -24,7 +22,6 @@ public class CarController : MonoBehaviour
             Debug.Log("NIE MA WEKTOR�W DLA CARCONTROLLER!!!");
         }
         NewDestination();
-        startRotation = transform.rotation;
     }
 
     private void Update()
@@ -68,8 +65,6 @@ public class CarController : MonoBehaviour
         currentVector = vectors[index];
         endPoint = transform.position + currentVector;
         currentVector = currentVector.normalized;
-
-        //Quaternion rotation = Quaternion.identity;
 
         transform.rotation = Quaternion.LookRotation(currentVector, Vector3.up);
         Debug.Log(currentVector.normalized);

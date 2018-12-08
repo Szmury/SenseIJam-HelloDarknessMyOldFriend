@@ -7,6 +7,8 @@ public class Score : MonoBehaviour {
     [SerializeField]
     Text scoreText;
     [SerializeField]
+    Text negativeScoreText;
+    [SerializeField]
     Text gameOverText;
 
     int playerScore;
@@ -23,6 +25,7 @@ public class Score : MonoBehaviour {
         playerScore = maxHealth;
         gameOverText.gameObject.SetActive(false);
         scoreText.text = maxHealth.ToString();
+        negativeScoreText.gameObject.SetActive(false);
     }
 
     public void AddScore()
@@ -30,8 +33,10 @@ public class Score : MonoBehaviour {
         playerScore--;
         if(playerScore <= 0)
         {
-            GameOver();
-            GameManager.gm.runningGame = false;
+            scoreText.gameObject.SetActive(false);
+            negativeScoreText.gameObject.SetActive(true);
+            negativeScoreText.text = playerScore.ToString();
+            return;
         }
         scoreText.text = playerScore.ToString();
     }
