@@ -13,17 +13,19 @@ public class GremlinController : MonoBehaviour {
     public void Burn()
     {
         Debug.Log("I'm burning!");
-        ParticleSystem part = particle.GetComponent<ParticleSystem>();
-        particle.SetActive(true);
-        part.Play();
-        delay = part.main.duration;
+        
         StartCoroutine(Death());
     }
     
     IEnumerator Death()
     {
+        ParticleSystem part = particle.GetComponent<ParticleSystem>();
+        particle.SetActive(true);
+        part.Play();
+        delay = part.main.duration;
         yield return new WaitForSeconds(delay);
-        particle.SetActive(false);
+        part.Stop();
+        particle.SetActive(false);        
         ToPool(gameObject);
         Score.score.AddScore();
         gameObject.SetActive(false);
