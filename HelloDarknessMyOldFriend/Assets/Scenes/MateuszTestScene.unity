@@ -34,7 +34,7 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_ReflectionBounces: 2
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -53,7 +53,7 @@ LightmapSettings:
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 10
     m_Resolution: 2
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 857a13ccd5f761b40a5fe96a2960c446,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -113,34 +114,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &83668657
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 83668658}
-  m_Layer: 0
-  m_Name: Car Lights
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &83668658
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 83668657}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.151319, y: 1.9667393, z: 5.7525883}
-  m_LocalScale: {x: 1, y: 3.9334786, z: 2.5029376}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242451850
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +569,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4265836505172518, guid: ba04bc281fd6741489930c44768306b8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.7447634
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 4265836505172518, guid: ba04bc281fd6741489930c44768306b8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -604,7 +577,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4265836505172518, guid: ba04bc281fd6741489930c44768306b8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -7.8637357
+      value: -7.7
       objectReference: {fileID: 0}
     - target: {fileID: 4265836505172518, guid: ba04bc281fd6741489930c44768306b8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -669,7 +642,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1045583374}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -880,7 +853,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -898,7 +871,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385925620}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4.03, y: 5.91, z: -1.19}
+  m_LocalPosition: {x: -4.03, y: 14.78, z: -10.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -960,6 +933,11 @@ Prefab:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114112406510497108, guid: 504379304204e364994795d709952dd6,
+        type: 2}
+      propertyPath: WinUI
+      value: 
+      objectReference: {fileID: 2043792728}
+    - target: {fileID: 114728395971729340, guid: 504379304204e364994795d709952dd6,
         type: 2}
       propertyPath: WinUI
       value: 
@@ -1127,7 +1105,7 @@ MonoBehaviour:
   GremlinsList:
   - {fileID: 653083204}
   multiplyTick: 3
-  force: 300
+  force: 100
 --- !u!4 &1986969212
 Transform:
   m_ObjectHideFlags: 0
@@ -1293,6 +1271,22 @@ Prefab:
     - target: {fileID: 4189448308906586, guid: 184e7e30a3a9b82478154e23079498ac, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764525399757226, guid: 184e7e30a3a9b82478154e23079498ac, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351169406254020, guid: 184e7e30a3a9b82478154e23079498ac, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081781701750006, guid: 184e7e30a3a9b82478154e23079498ac, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764525399757226, guid: 184e7e30a3a9b82478154e23079498ac, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 184e7e30a3a9b82478154e23079498ac, type: 2}
