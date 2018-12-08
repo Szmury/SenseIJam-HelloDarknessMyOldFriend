@@ -1,40 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-    bool isRunning = true;
-    int playerScore = 0;
-    // Use this for initialization
-    void Start()
-    {
+    [SerializeField]
+    Text scoreText;
+    [SerializeField]
+    Text gameOverText;
 
+    int playerScore = 0;
+
+    public static Score score;
+
+    private void Awake()
+    {
+        score = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
-
+        gameOverText.gameObject.SetActive(false);
+        scoreText.text = "Punkty: " + playerScore.ToString();
     }
 
     public void AddScore()
     {
         playerScore++;
+        scoreText.text = "Punkty: " + playerScore.ToString();
     }
 
-   
-
-    void OnGUI()
+    public void GameOver()
     {
-        if (isRunning == true)
-        {
-            GUI.Label(new Rect(5, 5, 100, 30), "Punkty: " + playerScore);
-        }
-
-        else
-        {
-            GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50, 200, 100), "Game Over. Your score: " + playerScore);
-        }
+        scoreText.gameObject.SetActive(false);
+        gameOverText.gameObject.SetActive(true);
+        gameOverText.text = "Game Over. Your score: " + playerScore.ToString();
     }
 }
