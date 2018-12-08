@@ -32,15 +32,14 @@ public class Movement : MonoBehaviour
 
     public bool UpdatedPosition(string key, Vector3 moveVector, int rotation)
     {
-        if (yObj < 1)
-        {
+        
             if (Input.GetKey(key))
             {
                 myTransform.position += moveVector * Time.deltaTime * moveSpeed;
                 myTransform.rotation = Quaternion.Euler(0, rotation, 0);
                 return true;
             }
-        }
+        
         return false;
     }
 }
