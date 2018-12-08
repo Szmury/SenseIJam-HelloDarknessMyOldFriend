@@ -1,16 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static GameManager gm;
+
+    public bool runningGame = true;
+
+    private void Awake()
+    {
+        if (gm != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            gm = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

@@ -28,6 +28,8 @@ public class Organizer : MonoBehaviour {
 
     void Multiply()
     {
+        if (!GameManager.gm.runningGame)
+            return;
         int count = GremlinsList.Count;
         if (count == 0)
             return;
