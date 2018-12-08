@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 52eeb115441a10e40956c435d72d9897
+guid: fdda3493ecc77e342ad785acb46c3d8d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: christmas_lamps1
+    100002: christmas_tree
     400000: //RootNode
-    400002: christmas_lamps1
-    2100000: christmas_lamps1Mat
-    2300000: christmas_lamps1
-    3300000: christmas_lamps1
-    4300000: christmas_lamps1
+    400002: christmas_tree
+    2100000: christmas_treeMat
+    2300000: christmas_tree
+    3300000: christmas_tree
+    4300000: christmas_tree
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -42,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.05
+    globalScale: 0.15
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

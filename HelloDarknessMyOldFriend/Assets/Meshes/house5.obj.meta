@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 52eeb115441a10e40956c435d72d9897
+guid: a70df9b8162b0734a9d19b6fa7b2a301
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: christmas_lamps1
-    400000: //RootNode
-    400002: christmas_lamps1
-    2100000: christmas_lamps1Mat
-    2300000: christmas_lamps1
-    3300000: christmas_lamps1
-    4300000: christmas_lamps1
+    100000: house5
+    100002: //RootNode
+    400000: house5
+    400002: //RootNode
+    2100000: house5Mat
+    2300000: house5
+    3300000: house5
+    4300000: house5
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -42,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.05
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -50,7 +50,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -66,7 +66,7 @@ ModelImporter:
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
