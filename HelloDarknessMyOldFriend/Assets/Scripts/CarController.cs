@@ -30,7 +30,7 @@ public class CarController : MonoBehaviour {
     {
         if (!stop)
         {
-            transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
+            transform.Translate((endPoint - transform.position).normalized * currentSpeed * Time.deltaTime, Space.World);
 
             if ((transform.position - endPoint).magnitude <= 0.3)
                 NewDestination();
