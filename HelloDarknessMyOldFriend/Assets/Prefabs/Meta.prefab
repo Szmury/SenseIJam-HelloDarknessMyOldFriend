@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33606075149569096}
   - component: {fileID: 23917428780902252}
   - component: {fileID: 65215137013167374}
+  - component: {fileID: 114112406510497108}
   m_Layer: 0
   m_Name: Meta
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1358793222258762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.07, y: 1.8924, z: -0.898777}
+  m_LocalPosition: {x: -9.151319, y: 1.9667393, z: 5.7525883}
   m_LocalScale: {x: 1, y: 3.9334786, z: 2.5029376}
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,8 +92,20 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1358793222258762}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114112406510497108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1358793222258762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83eb6b1164bc42847a94e256c34c2ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WinUI: {fileID: 0}
