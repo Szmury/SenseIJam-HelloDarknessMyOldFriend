@@ -17,6 +17,8 @@ public class Organizer : MonoBehaviour {
     void Start()
     {
         ticker.SetTickerAndCallback(multiplyTick, Multiply);
+        GremlinsPoolList = new List<GameObject>();
+        GremlinsList[0].GetComponent<GremlinController>().ToPool = MoveGremlinToPool;
     }
 
     void Update()

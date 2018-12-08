@@ -9,6 +9,7 @@ public class GremlinController : MonoBehaviour {
 	public void Burn()
     {
         Debug.Log("I'm burning!");
+        Death();
         // Start animations here
     }
 
