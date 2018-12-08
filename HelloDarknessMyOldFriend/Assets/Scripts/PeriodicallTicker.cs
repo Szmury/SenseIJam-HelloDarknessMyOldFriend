@@ -4,7 +4,7 @@ using UnityEngine;
 public class PeriodicallTicker : MonoBehaviour
 {
     private float timePassed = 0;
-    public float finalTime = 0;
+    private float finalTime = 0;
     private Action onTick = null;
     private bool isStarted = false;
 
