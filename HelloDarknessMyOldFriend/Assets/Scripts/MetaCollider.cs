@@ -12,8 +12,10 @@ public class MetaCollider : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        WinUI.SetActive(true);
-        GameManager.gm.runningGame = false;
+        if (other.tag == "Gremlin") {
+            WinUI.SetActive(true);
+            GameManager.gm.runningGame = false;
+        }
     }
 
     public void ChangeScene()
