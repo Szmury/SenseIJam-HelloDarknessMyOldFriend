@@ -16,6 +16,7 @@ public class GremlinController : MonoBehaviour {
     public void Death()
     {
         ToPool(gameObject);
+        Score.score.AddScore();
         gameObject.SetActive(false);
     }
 

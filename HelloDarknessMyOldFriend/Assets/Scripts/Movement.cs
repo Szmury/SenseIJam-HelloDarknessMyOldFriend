@@ -1,21 +1,18 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
 
-
     public float moveSpeed = 0.5f;
     private Transform myTransform;
     private float yObj;
 
-    // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         myTransform = transform;
-       
     }
 
-    // Update is called once per frame
     void Update()
     {
         yObj = myTransform.position.y;
@@ -31,7 +28,7 @@ public class Movement : MonoBehaviour {
         {
             if (Input.GetKey(key))
             {
-                myTransform.position += moveVector * Time.deltaTime;
+                myTransform.position += moveVector * Time.deltaTime * moveSpeed;
                 myTransform.rotation = Quaternion.Euler(0, rotation, 0);
             }
         }

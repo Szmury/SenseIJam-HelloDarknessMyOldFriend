@@ -29,6 +29,8 @@ public class Organizer : MonoBehaviour {
     void Multiply()
     {
         int count = GremlinsList.Count;
+        if (count == 0)
+            return;
         List<GameObject> newObjects = new List<GameObject>();
 
         for (int i = 0; i < 1; i++)
@@ -47,7 +49,7 @@ public class Organizer : MonoBehaviour {
             {
                 go = Instantiate(GremlinsList[0], position, Quaternion.identity, transform);
             }
-            Vector3 pushDirection = new Vector3(Random.Range(0.0f, 1.0f), 0, Random.Range(0.0f, 1.0f));
+            Vector3 pushDirection = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
             go.GetComponent<Rigidbody>().AddForce(force * pushDirection.normalized);
             go.GetComponent<GremlinController>().ToPool = MoveGremlinToPool;
             newObjects.Add(go);
@@ -59,5 +61,11 @@ public class Organizer : MonoBehaviour {
     {
         GremlinsList.Remove(gremlin);
         GremlinsPoolList.Add(gremlin);
+
+        //GameOver
+        if(GremlinsList.Count == 0)
+        {
+            Score.score.GameOver();
+        }
     }
 }
