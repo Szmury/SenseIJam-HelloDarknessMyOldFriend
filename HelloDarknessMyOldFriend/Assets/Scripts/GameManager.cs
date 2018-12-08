@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown("r"))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void ChangeScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

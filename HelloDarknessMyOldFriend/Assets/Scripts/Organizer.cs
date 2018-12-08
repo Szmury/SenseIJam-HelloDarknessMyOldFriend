@@ -18,7 +18,10 @@ public class Organizer : MonoBehaviour {
     {
         ticker.SetTickerAndCallback(multiplyTick, Multiply);
         GremlinsPoolList = new List<GameObject>();
-        GremlinsList[0].GetComponent<GremlinController>().ToPool = MoveGremlinToPool;
+        // Dodawanie do gremlinController odwo�an do skrypt�w
+        GremlinController gc = GremlinsList[0].GetComponent<GremlinController>();
+        gc.ToPool = MoveGremlinToPool;
+        gc.DeleteFromList = DeleteGremlinFromList;
     }
 
     void Update()
@@ -53,7 +56,11 @@ public class Organizer : MonoBehaviour {
             }
             Vector3 pushDirection = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
             go.GetComponent<Rigidbody>().AddForce(force * pushDirection.normalized);
-            go.GetComponent<GremlinController>().ToPool = MoveGremlinToPool;
+
+            // Dodawanie do gremlinController odwo�an do skrypt�w
+            GremlinController gc = go.GetComponent<GremlinController>();
+            gc.ToPool = MoveGremlinToPool;
+            gc.DeleteFromList = DeleteGremlinFromList;
             newObjects.Add(go);
         }
         GremlinsList.AddRange(newObjects);
@@ -61,7 +68,6 @@ public class Organizer : MonoBehaviour {
 
     public void MoveGremlinToPool(GameObject gremlin)
     {
-        GremlinsList.Remove(gremlin);
         GremlinsPoolList.Add(gremlin);
 
         //GameOver
@@ -69,5 +75,10 @@ public class Organizer : MonoBehaviour {
         {
             Score.score.GameOver();
         }
+    }
+
+    public void DeleteGremlinFromList(GameObject gremlin)
+    {
+        GremlinsList.Remove(gremlin);
     }
 }

@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 4dea090073282954b8868e2f6bb82b6c
+guid: ed67357fd16dd684b85268a42885c09f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: gremlin2
-    400000: //RootNode
-    400002: gremlin2
-    2100000: gremlin2Mat
-    2300000: gremlin2
-    3300000: gremlin2
-    4300000: gremlin2
+    100000: car
+    100002: //RootNode
+    400000: car
+    400002: //RootNode
+    2100000: carMat
+    2300000: car
+    3300000: car
+    4300000: car
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -42,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.04
+    globalScale: 0.12
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
