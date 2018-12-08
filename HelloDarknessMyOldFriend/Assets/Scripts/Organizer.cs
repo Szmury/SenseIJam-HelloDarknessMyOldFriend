@@ -35,7 +35,7 @@ public class Organizer : MonoBehaviour {
 
         for (int i = 0; i < 1; i++)
         {
-            Vector2 position = GremlinsList[i].transform.position;
+            Vector3 position = GremlinsList[i].transform.position;
             position.y += 2;
             GameObject go;
             if (GremlinsPoolList.Count > 0)
