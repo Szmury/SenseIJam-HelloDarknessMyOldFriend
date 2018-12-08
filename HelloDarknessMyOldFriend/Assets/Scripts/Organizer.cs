@@ -18,7 +18,7 @@ public class Organizer : MonoBehaviour {
     {
         ticker.SetTickerAndCallback(multiplyTick, Multiply);
         GremlinsPoolList = new List<GameObject>();
-        // Dodawanie do gremlinController odwo�an do skrypt�w
+        // Dodawanie do gremlinController odwolan do skrypt�w
         GremlinController gc = GremlinsList[0].GetComponent<GremlinController>();
         gc.ToPool = MoveGremlinToPool;
         gc.DeleteFromList = DeleteGremlinFromList;
@@ -57,7 +57,7 @@ public class Organizer : MonoBehaviour {
             Vector3 pushDirection = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
             go.GetComponent<Rigidbody>().AddForce(force * pushDirection.normalized);
 
-            // Dodawanie do gremlinController odwo�an do skrypt�w
+            // Dodawanie do gremlinController odwolan do skryptow
             GremlinController gc = go.GetComponent<GremlinController>();
             gc.ToPool = MoveGremlinToPool;
             gc.DeleteFromList = DeleteGremlinFromList;

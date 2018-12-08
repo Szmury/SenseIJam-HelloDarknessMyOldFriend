@@ -13,7 +13,7 @@ public class GremlinController : MonoBehaviour {
     public void Burn()
     {
         Debug.Log("I'm burning!");
-        //Usuni�cie z listy
+        //Usuniecie z listy
         DeleteFromList(gameObject);
         StartCoroutine(Death());
     }

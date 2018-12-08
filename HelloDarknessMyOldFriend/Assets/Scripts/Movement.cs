@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     {
         myTransform = transform;
         gameManager = GameManager.gm;
+        gameManager.runningGame = true;
     }
  
     void Update()
