@@ -24,11 +24,23 @@ public class GameManager : MonoBehaviour {
     private void Update()
     {
         if (Input.GetKeyDown("r"))
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Restart();
+        else if (Input.GetKeyDown(KeyCode.Escape))
+            BackToMenu();
     }
 
-    public void ChangeScene()
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

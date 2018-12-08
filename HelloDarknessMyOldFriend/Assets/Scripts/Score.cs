@@ -9,6 +9,8 @@ public class Score : MonoBehaviour {
     [SerializeField]
     Text negativeScoreText;
     [SerializeField]
+    GameObject gameOverObject;
+    [SerializeField]
     Text gameOverText;
 
     int playerScore;
@@ -23,7 +25,7 @@ public class Score : MonoBehaviour {
     public void Start()
     {
         playerScore = maxHealth;
-        gameOverText.gameObject.SetActive(false);
+        gameOverObject.SetActive(false);
         scoreText.text = maxHealth.ToString();
         negativeScoreText.gameObject.SetActive(false);
     }
@@ -44,7 +46,22 @@ public class Score : MonoBehaviour {
     public void GameOver()
     {
         scoreText.gameObject.SetActive(false);
-        gameOverText.gameObject.SetActive(true);
-        gameOverText.text = "Game Over.\nYou lost " + (maxHealth - playerScore).ToString() + " gremlins";
+        gameOverObject.SetActive(true);
+        gameOverText.text = "Game Over\nYou lost " + (maxHealth - playerScore).ToString() + " gremlins";
+    }
+
+    public void Restart()
+    {
+        GameManager.gm.Restart();
+    }
+
+    public void ToMenu()
+    {
+        GameManager.gm.BackToMenu();
+    }
+
+    public void NextScene()
+    {
+        GameManager.gm.NextScene();
     }
 }
