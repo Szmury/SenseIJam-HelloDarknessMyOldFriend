@@ -7,7 +7,6 @@ public class Movement : MonoBehaviour
 
     public float moveSpeed = 0.5f;
     private Transform myTransform;
-    private float yObj;
     public float maxAngle = 40;
     GameManager gameManager;
     public float speedBop = 5;
@@ -22,7 +21,6 @@ public class Movement : MonoBehaviour
     {
         if (gameManager.runningGame)
         {
-            yObj = myTransform.position.y;
             UpdatedPosition("d", Vector3.right, 90);
             UpdatedPosition("a", Vector3.left, 270);
             UpdatedPosition("w", Vector3.forward, 0);
