@@ -13,6 +13,8 @@ public class CarController : MonoBehaviour {
     Vector3 currentVector;
     Vector3 endPoint;
 
+    Quaternion startRotation;
+
     public void Start()
     {
         if (vectors.Count == 0)
@@ -24,7 +26,7 @@ public class CarController : MonoBehaviour {
 
     private void Update()
     {
-        transform.Translate(currentVector * currentSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
 
         if ((transform.position - endPoint).magnitude <= 0.3)
             NewDestination();
@@ -56,9 +58,10 @@ public class CarController : MonoBehaviour {
         endPoint = transform.position + currentVector;
         currentVector = currentVector.normalized;
 
-        Quaternion rotation = new Quaternion();
-        rotation.eulerAngles = currentVector;
-        transform.rotation = rotation;
+        //Quaternion rotation = Quaternion.identity;
+        
+        transform.rotation = Quaternion.LookRotation(currentVector, Vector3.up);
+        //transform.Rotate(startRotation.eulerAngles);
     }
 
 }
