@@ -1,29 +1,28 @@
-﻿using System.Collections;
+using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimatorController : MonoBehaviour {
-    private float timePassed = 0;
-    public float finalTime = 0;
-    private Action onTick = null;
-    private bool isStarted = false;
+
+    public float animationTime = 0;
+    [Range(0, 1)]
+    public float newAnimationchance = 0.1f;
     PeriodicallTicker ticker;
 
     //Cached components
-    private Rigidbody rigidBody;
-    private Transform myTransform;
     public Animator animator;
     AnimatorController ani;
 
     void Start()
     {
-        ani = getComompoent< AnimatorController> //new ();
+        ani = GetComponent<AnimatorController>();
+        ticker = new PeriodicallTicker();
+        ticker.SetTickerAndCallback(animationTime, NewAnimation);
     }    
-        // Update is called once per frame
+    /*
     void Update()
     {
-  
         timePassed += Time.deltaTime;
 
         if (timePassed >= finalTime)
@@ -31,11 +30,15 @@ public class AnimatorController : MonoBehaviour {
             timePassed = 0;
             SetTickerAndCallback(5);
         }
+    }*/
+
+    void NewAnimation()
+    {
+
     }
 
     public void SetTickerAndCallback(float finallTime)
     {
-
         animator.SetTrigger("Standart");
         int a = UnityEngine.Random.Range(0, 3);
         switch (a)
@@ -50,11 +53,5 @@ public class AnimatorController : MonoBehaviour {
             animator.SetTrigger("Shake");
             break;
         }
-        
-        
-        
-        this.finalTime = finallTime;
-        this.onTick = onTick;
-        isStarted = true;
     }
 }
