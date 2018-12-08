@@ -2,8 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d21b0e8a-6d56-484a-bf44-2663f147e850" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Floor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lamp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lamp.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/flashlight.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/house1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/house2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/house3.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/house4.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/christmas lamps1.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/flashlight.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/house1.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/house2.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/house3.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Meshes/house4.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/House03.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/House04.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Flashlight.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/ObjectTestScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/flashlight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/house1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/house2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/house3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/house4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Car01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Car01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Car02.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Car02.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Gremlin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Gremlin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Meta.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/House02.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Necessary/Meta.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/House01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Necessary/MetaGate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Necessary/MetaGate.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MateuszTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MateuszTestScene.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/LightCollider.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding>
                 <marker date="1544269624739" expanded="true" signature="63:304" ph="{...}" />
                 <marker date="1544269624739" expanded="true" signature="113:302" ph="{...}" />
@@ -31,8 +56,8 @@
       <file leaf-file-name="MetaCollider.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/MetaCollider.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <marker date="1544269624741" expanded="true" signature="62:396" ph="{...}" />
                 <marker date="1544269624741" expanded="true" signature="133:177" ph="{...}" />
@@ -68,7 +93,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1040" />
@@ -136,12 +161,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544270432433</updated>
-      <workItem from="1544270436933" duration="1451000" />
+      <workItem from="1544270436933" duration="1469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1451000" />
+    <option name="totallyTimeSpent" value="1469000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -153,7 +178,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1549" height="837" extended-state="7" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -192,7 +217,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/LightCollider.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding>
             <marker date="1544269624739" expanded="true" signature="63:304" ph="{...}" />
             <marker date="1544269624739" expanded="true" signature="113:302" ph="{...}" />
@@ -203,8 +228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/MetaCollider.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <marker date="1544269624741" expanded="true" signature="62:396" ph="{...}" />
             <marker date="1544269624741" expanded="true" signature="133:177" ph="{...}" />
