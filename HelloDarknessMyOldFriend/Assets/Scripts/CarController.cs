@@ -28,11 +28,13 @@ public class CarController : MonoBehaviour {
 
     private void Update()
     {
-        if(!stop)
-        transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
+        if (!stop)
+        {
+            transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
 
-        if ((transform.position - endPoint).magnitude <= 0.3)
-            NewDestination();
+            if ((transform.position - endPoint).magnitude <= 0.3)
+                NewDestination();
+        }
     }
 
     void NewDestination()
