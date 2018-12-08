@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +12,11 @@ public class Organizer : MonoBehaviour {
     public float multiplyTick;
     public float force;
 
+    List<GameObject> GremlinsPoolList;
+
     void Start()
     {
         ticker.SetTickerAndCallback(multiplyTick, Multiply);
-
     }
 
     void Update()
@@ -33,11 +33,29 @@ public class Organizer : MonoBehaviour {
         {
             Vector2 position = GremlinsList[i].transform.position;
             position.y += 2;
-            GameObject go = Instantiate(GremlinsList[0], position, Quaternion.identity, transform);
+            GameObject go;
+            if (GremlinsPoolList.Count > 0)
+            {
+                go = GremlinsPoolList[0];
+                GremlinsPoolList.Remove(go);
+                go.SetActive(true);
+                go.transform.position = position;
+            }
+            else
+            {
+                go = Instantiate(GremlinsList[0], position, Quaternion.identity, transform);
+            }
             Vector3 pushDirection = new Vector3(Random.Range(0.0f, 1.0f), 0, Random.Range(0.0f, 1.0f));
             go.GetComponent<Rigidbody>().AddForce(force * pushDirection.normalized);
+            go.GetComponent<GremlinController>().ToPool = MoveGremlinToPool;
             newObjects.Add(go);
         }
         GremlinsList.AddRange(newObjects);
+    }
+
+    public void MoveGremlinToPool(GameObject gremlin)
+    {
+        GremlinsList.Remove(gremlin);
+        GremlinsPoolList.Add(gremlin);
     }
 }
