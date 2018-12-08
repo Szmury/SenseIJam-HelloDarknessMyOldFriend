@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class Movement : MonoBehaviour
 {
 
@@ -12,54 +12,40 @@ public class Movement : MonoBehaviour
     public float maxAngle = 40;
     GameManager gameManager;
     public float speedBop = 5;
+    private bool[] isBop = new bool[4];
     void Start()
     {
         myTransform = transform;
         gameManager = GameManager.gm;
         gameManager.runningGame = true;
     }
- 
-    void Update()
-    {
-        if (gameManager.runningGame)
-        {
-            yObj = myTransform.position.y;
-            Boping(UpdatedPosition("d", Vector3.right, 90));
-            Boping(UpdatedPosition("a", Vector3.left, 270));
-            Boping(UpdatedPosition("w", Vector3.forward, 0));
-            Boping(UpdatedPosition("s", Vector3.back, 180));
-        }
-    }
 
-    public bool UpdatedPosition(string key, Vector3 moveVector, int rotation)
-    {
-        if (yObj < 1)
+        void Update()
         {
-            if (Input.GetKey(key))
+            if (gameManager.runningGame)
             {
-                myTransform.position += moveVector * Time.deltaTime * moveSpeed;
-                myTransform.rotation = Quaternion.Euler(0, rotation, 0);
-                return true;
+                yObj = myTransform.position.y;
+                UpdatedPosition("d", Vector3.right, 90);
+                UpdatedPosition("a", Vector3.left, 270);
+                UpdatedPosition("w", Vector3.forward, 0);
+                UpdatedPosition("s", Vector3.back, 180);
             }
+
         }
-        return false;
-    }
 
-
-
-    public void Boping(bool flag)
-    {
-        
-        if (flag)
+        public bool UpdatedPosition(string key, Vector3 moveVector, int rotation)
         {
-            if (angle > maxAngle || angle < -maxAngle)
+            if (yObj < 1)
             {
-                speedBop *= (-1);
+                if (Input.GetKey(key))
+                {
+                    myTransform.position += moveVector * Time.deltaTime * moveSpeed;
+                    myTransform.rotation = Quaternion.Euler(0, rotation, 0);
+                    return true;
+                }
             }
-            angle -= speedBop * Time.deltaTime;
-            myTransform.rotation = Quaternion.Euler(0, 0, angle );
-
+            return false;
         }
     }
-}
+
 
