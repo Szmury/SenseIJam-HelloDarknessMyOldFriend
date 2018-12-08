@@ -11,6 +11,8 @@ public class Organizer : MonoBehaviour {
     List<GameObject> GremlinsList;
     public float multiplyTick;
     public float force;
+    [Range(0f, 1f)]
+    public float diffrenceInSize = 0.1f;
 
     List<GameObject> GremlinsPoolList;
 
@@ -56,6 +58,10 @@ public class Organizer : MonoBehaviour {
             }
             Vector3 pushDirection = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f));
             go.GetComponent<Rigidbody>().AddForce(force * pushDirection.normalized);
+
+            //zmiana rozmiaru
+            float size = Random.Range(1 - diffrenceInSize, 1 + diffrenceInSize);
+            go.transform.localScale = new Vector3(size, size, size);
 
             // Dodawanie do gremlinController odwolan do skryptow
             GremlinController gc = go.GetComponent<GremlinController>();

@@ -20,6 +20,6 @@ public class MetaCollider : MonoBehaviour {
 
     public void ChangeScene()
     {
-        GameManager.gm.ChangeScene();
+        GameManager.gm.NextScene();
     }
 }
