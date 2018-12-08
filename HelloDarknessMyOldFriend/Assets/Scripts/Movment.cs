@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,7 +29,7 @@ public class Movment : MonoBehaviour {
     {
         if (Input.GetKey(key))
         {
-            myTransform.position += moveVector * Time.deltaTime;
+            myTransform.position += moveVector * Time.deltaTime * moveSpeed;
             myTransform.rotation = Quaternion.Euler(0, rotation, 0);
         }
     }

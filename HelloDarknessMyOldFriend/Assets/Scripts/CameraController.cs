@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour {
         cam = GetComponent<Camera>();
     }
 
-    public List<GameObject> targets;
+    //public List<GameObject> targets;
 
     /*
     private void Update()
