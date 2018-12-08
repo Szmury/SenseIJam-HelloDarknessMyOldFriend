@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GremlinController : MonoBehaviour {
@@ -32,6 +31,4 @@ public class GremlinController : MonoBehaviour {
         Score.score.AddScore();
         gameObject.SetActive(false);
     }
-    
-
 }
