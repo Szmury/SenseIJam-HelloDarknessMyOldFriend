@@ -9,7 +9,6 @@ public class GremlinController : MonoBehaviour {
     public GameObject particle;
     private float delay=3f;
 
-
     public void Burn()
     {
         Debug.Log("I'm burning!");

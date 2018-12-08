@@ -8,18 +8,24 @@ public class Movement : MonoBehaviour {
     private Transform myTransform;
     private float yObj;
 
+    GameManager gameManager;
+
     void Start ()
     {
         myTransform = transform;
+        gameManager = GameManager.gm;
     }
 
     void Update()
     {
-        yObj = myTransform.position.y;
-        UpdatedPosition("d", Vector3.right, 90);
-        UpdatedPosition("a", Vector3.left, 270);
-        UpdatedPosition("w", Vector3.forward, 0);
-        UpdatedPosition("s", Vector3.back, 180);
+        if (gameManager.runningGame)
+        {
+            yObj = myTransform.position.y;
+            UpdatedPosition("d", Vector3.right, 90);
+            UpdatedPosition("a", Vector3.left, 270);
+            UpdatedPosition("w", Vector3.forward, 0);
+            UpdatedPosition("s", Vector3.back, 180);
+        }
     }
 
     private void UpdatedPosition(string key, Vector3 moveVector, int rotation)
