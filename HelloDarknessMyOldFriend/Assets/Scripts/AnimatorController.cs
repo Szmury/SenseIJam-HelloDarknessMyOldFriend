@@ -18,11 +18,11 @@ public class AnimatorController : MonoBehaviour {
         animator = GetComponent<Animator>();
         ticker = GetComponent<PeriodicallTicker>();
         ticker.SetTickerAndCallback(animationTime,Callback);
-    }    
+    }
 
     private void Callback()
     {
-        switch (UnityEngine.Random.Range(0, 7))
+        switch (UnityEngine.Random.Range(0, 9))
         { 
         case 0 :
             animator.SetTrigger("Jump");
