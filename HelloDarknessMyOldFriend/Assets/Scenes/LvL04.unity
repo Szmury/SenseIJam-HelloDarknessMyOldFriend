@@ -8600,6 +8600,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114539786138344312, guid: 842bdae11810efc46aaca9f3a8ab0593,
+        type: 2}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 842bdae11810efc46aaca9f3a8ab0593, type: 2}
   m_IsPrefabAsset: 0

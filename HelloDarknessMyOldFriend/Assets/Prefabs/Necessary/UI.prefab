@@ -519,11 +519,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a5d351e43b8bf49a68222ac847dc7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 10
   scoreText: {fileID: 114191129179329572}
   negativeScoreText: {fileID: 114003537720851560}
   gameOverObject: {fileID: 1315103470922172}
   gameOverText: {fileID: 114488123190328518}
+  WinUI: {fileID: 1490009260306036}
 --- !u!114 &114551485541523616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1189,6 +1190,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.37389344}
-  m_AnchoredPosition: {x: 0.000061035156, y: -1.2799072}
+  m_AnchoredPosition: {x: 0, y: -1.2799072}
   m_SizeDelta: {x: 0, y: 3.5200195}
   m_Pivot: {x: 0.5, y: 0.5}
