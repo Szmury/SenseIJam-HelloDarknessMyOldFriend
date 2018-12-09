@@ -12,6 +12,8 @@ public class Score : MonoBehaviour {
     GameObject gameOverObject;
     [SerializeField]
     Text gameOverText;
+    [SerializeField]
+    GameObject WinUI;
 
     int playerScore;
 
@@ -45,9 +47,10 @@ public class Score : MonoBehaviour {
 
     public void GameOver()
     {
+        WinUI.SetActive(false);
+        Destroy(WinUI);
         scoreText.gameObject.SetActive(false);
         gameOverObject.SetActive(true);
-        gameOverText.text = "Game Over\nYou lost " + (maxHealth - playerScore).ToString() + " gremlins";
     }
 
     public void Restart()
